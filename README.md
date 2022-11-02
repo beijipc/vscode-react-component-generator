@@ -7,6 +7,10 @@
 [![The MIT License](https://flat.badgen.net/badge/license/MIT/orange)](http://opensource.org/licenses/MIT)
 [![GitHub](https://flat.badgen.net/github/release/abdullahceylan/vscode-react-component-generator)](https://github.com/abdullahceylan/vscode-react-component-generator/releases)
 
+## notice
+
+based on https://github.com/abdullahceylan/vscode-react-component-generator. supported nextjs and tarojs
+
 ## Other Versions
 [Please click here for React Native version](https://marketplace.visualstudio.com/items?itemName=abdullahceylan.vscode-react-native-component-generator)
 

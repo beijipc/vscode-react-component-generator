@@ -1,25 +1,25 @@
 {
-  "name": "vscode-react-component-generator",
-  "displayName": "VSCode React Component Generator",
-  "description": "Generates React component files automatically",
-  "version": "0.0.3",
-  "publisher": "abdullahceylan",
+  "name": "generator-react-component",
+  "displayName": "Generator React Component",
+  "description": "快速创建react组件，基于（vscode-react-component-generator）",
+  "version": "1.0.0",
+  "publisher": "beijipc",
   "author": {
-    "name": "Abdullah Ceylan",
-    "email": "ben@abdullahceylan.com"
+    "name": "jianglinghua",
+    "email": "7656314@qq.com"
   },
-  "homepage": "https://github.com/abdullahceylan/vscode-react-component-generator",
+  "homepage": "https://github.com/beijipc/vscode-react-component-generator",
   "galleryBanner": {
-      "color": "#0273D4",
-      "theme": "dark"
+    "color": "#0273D4",
+    "theme": "dark"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/abdullahceylan/vscode-react-component-generator.git"
+    "url": "https://github.com/beijipc/vscode-react-component-generator.git"
   },
   "bugs": {
-    "url": "https://github.com/abdullahceylan/vscode-react-component-generator/issues",
-    "email": "ben@abdullahceylan.com"
+    "url": "https://github.com/beijipc/vscode-react-component-generator/issues",
+    "email": "7656314@qq.com"
   },
   "license": "MIT",
   "engines": {
@@ -37,7 +37,9 @@
     "react generate component",
     "redux",
     "stateless",
-    "typescript"
+    "typescript",
+    "tarojs",
+    "nextjs"
   ],
   "activationEvents": [
     "onCommand:extension.genReactContainerComponentFiles",
@@ -103,7 +105,6 @@
           "default": "styled-components (.js)",
           "description": "The type of stylesheet file to create"
         },
-
         "ACReactComponentGenerator.styleFile.suffix": {
           "type": "string",
           "default": ".styles",
@@ -172,7 +173,6 @@
     "eslint": "^4.11.0",
     "@types/node": "^8.10.25",
     "@types/mocha": "^2.2.42"
-
   },
   "dependencies": {
     "change-case": "^3.0.2",
