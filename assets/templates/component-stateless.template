@@ -1,6 +1,6 @@
 import React from {quotes}react{quotes};
 import PropTypes from {quotes}prop-types{quotes};
-//import { Test } from './{componentName}.styles';
+import styles from {quotes}./{stylesheetName}{quotes};
 
 const {componentName} = (props) => (
   <div className="{componentName}Wrapper">

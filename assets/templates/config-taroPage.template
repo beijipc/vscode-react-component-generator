@@ -1,0 +1,7 @@
+export default {
+  navigationBarTitleText: {quotes}{componentName}{quotes},
+  // enableShareAppMessage: true,
+  // enableShareTimeline: true,
+  // enablePullDownRefresh: true,
+  // onReachBottomDistance: 100,
+};

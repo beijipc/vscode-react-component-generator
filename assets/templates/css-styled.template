@@ -1,6 +1,5 @@
-// import styled from {quotes}styled-components{quotes};
+import styled from {quotes}styled-components{quotes};
 
-// export const Test = styled.div`
-//  display: flex;
-// `;
-//
+export const {componentName}Wrapper = styled.div`
+    
+`;

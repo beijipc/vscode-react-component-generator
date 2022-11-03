@@ -2,17 +2,17 @@
 
 (**vscode-react-component-generator**)
 
-[![Version](https://vsmarketplacebadge.apphb.com/version/abdullahceylan.vscode-react-component-generator.svg)](https://marketplace.visualstudio.com/items?itemName=abdullahceylan.vscode-react-component-generator)
-[![Installs](https://vsmarketplacebadge.apphb.com/installs/abdullahceylan.vscode-react-component-generator.svg)](https://marketplace.visualstudio.com/items?itemName=abdullahceylan.vscode-react-component-generator)
+[![Version](https://vsmarketplacebadge.apphb.com/version/beijipc.vscode-react-component-generator.svg)](https://marketplace.visualstudio.com/items?itemName=beijipc.vscode-react-component-generator)
+[![Installs](https://vsmarketplacebadge.apphb.com/installs/beijipc.vscode-react-component-generator.svg)](https://marketplace.visualstudio.com/items?itemName=beijipc.vscode-react-component-generator)
 [![The MIT License](https://flat.badgen.net/badge/license/MIT/orange)](http://opensource.org/licenses/MIT)
-[![GitHub](https://flat.badgen.net/github/release/abdullahceylan/vscode-react-component-generator)](https://github.com/abdullahceylan/vscode-react-component-generator/releases)
+[![GitHub](https://flat.badgen.net/github/release/beijipc/vscode-react-component-generator)](https://github.com/beijipc/vscode-react-component-generator/releases)
 
 ## notice
 
 based on https://github.com/abdullahceylan/vscode-react-component-generator. supported nextjs and tarojs
 
 ## Other Versions
-[Please click here for React Native version](https://marketplace.visualstudio.com/items?itemName=abdullahceylan.vscode-react-native-component-generator)
+[Please click here for React Native version](https://marketplace.visualstudio.com/items?itemName=beijipc.vscode-react-native-component-generator)
 
 ## Description
 
@@ -29,12 +29,12 @@ The extension automatically creates folder for react component containing :
 
 Install through VS Code extensions. Search for `VSCode React Component Generator`
 
-[Visual Studio Code Market Place: VSCode React Component Generator](https://marketplace.visualstudio.com/items?itemName=abdullahceylan.vscode-react-component-generator)
+[Visual Studio Code Market Place: VSCode React Component Generator](https://marketplace.visualstudio.com/items?itemName=beijipc.vscode-react-component-generator)
 
 Can also be installed in VS Code: Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter.
 
 ```bash
-ext install abdullahceylan.vscode-react-component-generator
+ext install beijipc.vscode-react-component-generator
 ```
 
 ## Usage
@@ -121,4 +121,4 @@ The type of stylesheet file to create. Valid options:
 
 ## Bugs
 
-Please report [here](https://github.com/abdullahceylan/vscode-react-component-generator/issues)
+Please report [here](https://github.com/beijipc/vscode-react-component-generator/issues)

@@ -1,0 +1,18 @@
+import React from {quotes}react{quotes};
+import { {componentName}Wrapper } from {quotes}./{stylesheetName}{quotes};
+
+interface SelfProps {
+  [propsName:string]: any
+}
+
+const {componentName}: React.FC<SelfProps> = (props) => (
+  <{componentName}Wrapper>
+    {componentName}
+  </{componentName}Wrapper>
+);
+
+{componentName}.defaultProps = {
+  
+};
+
+export default {componentName};

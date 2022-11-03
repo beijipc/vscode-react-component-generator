@@ -1,6 +1,6 @@
 {
-  "name": "generator-react-component",
-  "displayName": "Generator React Component",
+  "name": "ddyx-generator-react-component",
+  "displayName": "DDYX Generator React Component",
   "description": "快速创建react组件，基于（vscode-react-component-generator）",
   "version": "1.0.0",
   "publisher": "beijipc",
@@ -61,12 +61,12 @@
             "double"
           ],
           "default": "single",
-          "description": "Options: `single` or `double` Result: `'`  or  `\"`"
+          "description": "single单引号，或者deuble双引号"
         },
         "ACReactComponentGenerator.global.generateFolder": {
           "type": "boolean",
           "default": true,
-          "description": "Generate or not separate folder for newly created component"
+          "description": "是否为新创建的组件生成单独的文件夹"
         },
         "ACReactComponentGenerator.global.lifecycleType": {
           "type": "string",
@@ -75,22 +75,22 @@
             "legacy",
             "reactv16"
           ],
-          "description": "The lifecycle type of generated component. `legacy` is contains componentWillReceiveProps, componentWillMount etc."
+          "description": "是否生成组件的生命周期类型`legacy`包含组件WillReceiveProps、组件WillMount等。"
         },
         "ACReactComponentGenerator.mainFile.create": {
           "type": "boolean",
           "default": true,
-          "description": "Whether to generate component's main file or not. e.g.: ComponentName.(extension)"
+          "description": "是否生成组件的主文件。 默认: ComponentName.{扩展名}"
         },
         "ACReactComponentGenerator.mainFile.extension": {
           "type": "string",
           "default": "jsx",
-          "description": "The extension of generated component file"
+          "description": "组件主文件的扩展名"
         },
         "ACReactComponentGenerator.styleFile.create": {
           "type": "boolean",
           "default": true,
-          "description": "Whether to generate component's style file or not. e.g.: ComponentName.(extension)"
+          "description": "是否生成组件的样式文件。 默认: ComponentName.{扩展名}"
         },
         "ACReactComponentGenerator.styleFile.type": {
           "type": "string",
@@ -103,22 +103,22 @@
             "less (.less)"
           ],
           "default": "styled-components (.js)",
-          "description": "The type of stylesheet file to create"
+          "description": "创建样式表的文件类型"
         },
         "ACReactComponentGenerator.styleFile.suffix": {
           "type": "string",
           "default": ".styles",
-          "description": "The suffix to add to the end of the stylesheet filename. Default: ComponentName.styles.(extension)"
+          "description": "为样式表文件名末尾添加后缀，如.module或.styles等。默认：ComponentName.styles.{扩展名}"
         },
         "ACReactComponentGenerator.indexFile.create": {
           "type": "boolean",
           "default": true,
-          "description": "Whether to generate component's index file or not. e.g.: index.(extension)"
+          "description": "是否生成组件的索引文件. 默认: index.{扩展名}"
         },
         "ACReactComponentGenerator.indexFile.extension": {
           "type": "string",
           "default": "js",
-          "description": "The extension of generated component index file"
+          "description": "生成组件的索引文件index的文件类型"
         }
       }
     },
@@ -138,25 +138,65 @@
       {
         "command": "extension.genReactReduxStatelessComponentFiles",
         "title": "New React Stateless Component with Redux"
+      },
+      {
+        "command": "extension.genTaroStatelessComponentFiles",
+        "title": "New Taro Function Component"
+      },
+      {
+        "command": "extension.genTaroStatelessPageFiles",
+        "title": "New Taro Function Page"
+      },
+      {
+        "command": "extension.genTaroClassPageFiles",
+        "title": "New Taro Class Page"
+      },
+      {
+        "command": "extension.genNextjsStatelessPageFiles",
+        "title": "New Nextjs Page"
+      },
+      {
+        "command": "extension.genNextjsStatelessComponentFiles",
+        "title": "New Nextjs Component"
       }
     ],
     "menus": {
       "explorer/context": [
         {
           "command": "extension.genReactContainerComponentFiles",
-          "group": "navigation"
+          "group": "ddyx"
         },
         {
           "command": "extension.genReactStatelessComponentFiles",
-          "group": "navigation"
+          "group": "ddyx"
         },
         {
           "command": "extension.genReactReduxContainerComponentFiles",
-          "group": "navigation"
+          "group": "ddyx"
         },
         {
           "command": "extension.genReactReduxStatelessComponentFiles",
-          "group": "navigation"
+          "group": "ddyx"
+        },
+        {
+          "command": "extension.genTaroStatelessComponentFiles",
+          "group": "ddyx"
+        },
+        {
+          "command": "extension.genTaroStatelessPageFiles",
+          "group": "ddyx"
+        },
+        {
+          "command": "extension.genTaroClassPageFiles",
+          "group": "ddyx"
+        },
+        {
+          "command": "extension.genNextjsStatelessPageFiles",
+          "group": "ddyx"
+        },
+        {
+          "command": "extension.genNextjsStatelessComponentFiles",
+          "group": "ddyx"
         }
       ]
     }
@@ -167,18 +207,17 @@
     "postinstall": "node ./node_modules/vscode/bin/install"
   },
   "devDependencies": {
-    "mocha": "^2.3.3",
-    "typescript": "^2.6.1",
-    "vscode": "^1.1.21",
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^18.11.9",
     "eslint": "^4.11.0",
-    "@types/node": "^8.10.25",
-    "@types/mocha": "^2.2.42"
+    "mocha": "^2.3.3",
+    "typescript": "^4.8.4",
+    "vscode": "^1.1.21"
   },
   "dependencies": {
     "change-case": "^3.0.2",
-    "fs": "^0.0.1-security",
     "fs-extra": "^0.30.0",
-    "rxjs": "^5.0.0-rc.1",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "rxjs": "^5.0.0-rc.1"
   }
 }

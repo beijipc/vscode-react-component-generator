@@ -1,0 +1,52 @@
+import React, {useEffect, useState} from {quotes}react{quotes};
+import Taro, { useDidShow, useDidHide, usePullDownRefresh, useReachBottom, useShareAppMessage, useRouter } from {quotes}@tarojs/taro{quotes};
+import { View, Text } from {quotes}@tarojs/components{quotes};
+import styles from {quotes}./{stylesheetName}{quotes};
+
+const {componentName}: React.FC = () => {
+  const [first, setfirst] = useState<number>(0);
+  const route = useRouter();
+
+  useEffect(() => {
+    // todo
+    return () => {};
+  }, []);
+
+  useDidShow(() => {
+    console.log(route.path);
+    // fetchData();
+  });
+
+  useDidHide(() => {});
+
+  useShareAppMessage(() => {
+    // 分享给好友
+    return {
+      title: "页面标题",
+      path: "页面路径",
+      imageUrl: "分享图片PNG及JPG，尺寸5:4",
+    };
+  });
+
+  usePullDownRefresh(async () => {
+    // 下拉时
+    // Taro.showNavigationBarLoading();
+    // Taro.stopPullDownRefresh();
+    // await fetchData();
+    // Taro.hideNavigationBarLoading();
+  });
+  useReachBottom(() => {
+    // 触底时
+    // if (hasMore(data)) {
+    // 	fetchData();
+    // }
+  });
+
+  return (
+    <View className={styles.wrap}>
+      <Text>{componentName} page {first}</Text>
+    </View>
+  );
+};
+
+export default {componentName};

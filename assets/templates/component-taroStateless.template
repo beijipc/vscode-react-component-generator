@@ -1,0 +1,22 @@
+import React, {useEffect, useState} from {quotes}react{quotes};
+import Taro, { useRouter } from {quotes}@tarojs/taro{quotes};
+import { View, Text } from {quotes}@tarojs/components{quotes};
+import styles from {quotes}./{stylesheetName}{quotes};
+
+interface IProps {
+}
+
+const {componentName}: React.FC<IProps> = (props) => {
+  const [first, setfirst] = useState<number>(0);
+  const route = useRouter();
+  console.log(route.path)
+
+  useEffect(() => {
+    // todo
+    return () => {};
+  }, []);
+
+  return <View className={styles.wrap}><Text>{componentName} component</Text></View>;
+};
+
+export default {componentName};

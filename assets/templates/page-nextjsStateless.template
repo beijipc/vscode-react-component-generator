@@ -1,0 +1,34 @@
+import React from {quotes}react{quotes};
+import type { NextPage, NextPageContext } from {quotes}next{quotes};
+import EnhancedPage from {quotes}@/layouts/EnhancedPage{quotes}
+import type { NextRouter } from {quotes}next/router{quotes}
+import { {componentName}Wrapper } from {quotes}./{stylesheetName}{quotes};
+
+interface PageProps {
+  [propsName: string]: any
+  userAgent?: string
+  router?: NextRouter
+  // 其它props类型定义
+}
+
+const {componentName}: NextPage<PageProps> = (props) => (
+  <{componentName}Wrapper>
+    <div>{componentName} user agent : { props.userAgent }</div>
+    <div>aspath: {props.router?.asPath}</div>
+  </{componentName}Wrapper>
+);
+
+{componentName}.defaultProps = {
+  userAgent: 'Here is defalut UA'
+};
+
+// 获取数据，如果是静态页面或无需SEO，请删除此方法
+{componentName}.getInitialProps = async (ctx: NextPageContext) => {
+  const userAgent = ctx.req ? ctx.req.headers['user-agent'] : navigator.userAgent
+  return {
+    userAgent
+    // 其它props注入
+  }
+}
+
+export default EnhancedPage({})({componentName});
