@@ -74,10 +74,20 @@ class {componentName} extends Component<IProps, PageState> {
   onShareAppMessage(obj: { from: string; target?: TaroElement; webViewUrl: string }) {
     // 监听用户点击页面内转发按钮（Button 组件 openType='share'）或右上角菜单“转发”按钮的行为，并自定义转发内容。
     console.log("onShareAppMessage:", obj);
+    return {
+      title: "页面标题",
+      path: "页面路径",
+      imageUrl: "分享图片PNG及JPG，尺寸5:4",
+    };
   }
   onShareTimeline() {
     // 监听右上角菜单“分享到朋友圈”按钮的行为，并自定义分享内容。
     console.log("onShareTimeline");
+    return {
+      title: "页面标题",
+      query: "自定义页面路径中携带的参数，如 path?a=1&b=2 的 “?” 后面部分",
+      imageUrl: "分享图片PNG及JPG，尺寸1:1",
+    };
   }
   onAddToFavorites() {
     // 监听用户点击右上角菜单“收藏”按钮的行为，并自定义收藏内容。只有微信小程序支持
