@@ -1,8 +1,8 @@
 {
   "name": "ddyx-generator-react-component",
   "displayName": "DDYX Generator React Component",
-  "description": "快速创建react组件，基于（vscode-react-component-generator）",
-  "version": "1.0.0",
+  "description": "快速创建react组件，支持nextjs、tarojs框架",
+  "version": "1.0.3",
   "publisher": "beijipc",
   "author": {
     "name": "jianglinghua",
@@ -45,7 +45,12 @@
     "onCommand:extension.genReactContainerComponentFiles",
     "onCommand:extension.genReactStatelessComponentFiles",
     "onCommand:extension.genReactReduxContainerComponentFiles",
-    "onCommand:extension.genReactReduxStatelessComponentFiles"
+    "onCommand:extension.genReactReduxStatelessComponentFiles",
+    "onCommand:extension.genTaroStatelessComponentFiles",
+    "onCommand:extension.genTaroStatelessPageFiles",
+    "onCommand:extension.genTaroClassPageFiles",
+    "onCommand:extension.genNextjsStatelessComponentFiles",
+    "onCommand:extension.genNextjsStatelessPageFiles"
   ],
   "main": "./out/src/extension",
   "icon": "assets/images/icon.png",
