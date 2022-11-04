@@ -61,11 +61,11 @@ class {componentName} extends Component<IProps, PageState> {
     // 监听用户滑动页面事件。
     console.log("onPageScroll:", obj);
   }
-  onPullDownRefresh() {
+  async onPullDownRefresh() {
     // 监听用户下拉动作。
     console.log("onPullDownRefresh");
   }
-  onReachBottom() {
+  async onReachBottom() {
     // 监听用户上拉触底事件。
     console.log("onReachBottom");
   }
