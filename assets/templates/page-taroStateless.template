@@ -3,9 +3,14 @@ import Taro, { useDidShow, useDidHide, usePullDownRefresh, useReachBottom, useSh
 import { View, Text } from {quotes}@tarojs/components{quotes};
 import styles from {quotes}./{stylesheetName}{quotes};
 
+type RouterParams = Taro.RouterInfo['params'] & {
+  id?: string;
+}
+
 const {componentName}: React.FC = () => {
   const [first, setfirst] = useState<number>(0);
   const route = useRouter();
+  const routeParams: RouterParams = route.params
 
   useEffect(() => {
     // todo
