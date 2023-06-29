@@ -2,7 +2,7 @@
   "name": "ddyx-generator-react-component",
   "displayName": "DDYX Generator React Component",
   "description": "快速创建react组件，支持nextjs、tarojs框架",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "publisher": "beijipc",
   "author": {
     "name": "jianglinghua",
@@ -23,7 +23,7 @@
   },
   "license": "MIT",
   "engines": {
-    "vscode": "^1.29.0"
+    "vscode": "^1.62.0"
   },
   "categories": [
     "Programming Languages",
@@ -207,7 +207,8 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "tsc -p ./",
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "postinstall": "node ./node_modules/vscode/bin/install"
   },
@@ -217,7 +218,8 @@
     "eslint": "^4.11.0",
     "mocha": "^2.3.3",
     "typescript": "^4.8.4",
-    "vscode": "^1.1.21"
+    "vscode": "^1.1.37",
+    "vscode-test": "^1.6.1"
   },
   "dependencies": {
     "change-case": "^3.0.2",
