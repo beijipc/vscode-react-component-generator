@@ -2,7 +2,7 @@
   "name": "ddyx-generator-react-component",
   "displayName": "DDYX Generator React Component",
   "description": "快速创建react组件，支持nextjs、tarojs框架",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "publisher": "beijipc",
   "author": {
     "name": "jianglinghua",

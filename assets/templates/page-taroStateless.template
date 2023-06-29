@@ -8,9 +8,16 @@ type RouterParams = Taro.RouterInfo['params'] & {
 }
 
 const {componentName}: React.FC = () => {
-  const [first, setfirst] = useState<number>(0);
+  const [fetching, setFetching] = useState<boolean>(false);
   const route = useRouter();
   const routeParams: RouterParams = route.params
+
+  const fetchData = async () => {
+    if (fetching) return // 防止重复请求
+    setFetching(true)
+    // TODO: fetching data
+    setFetching(false)
+  }
 
   useEffect(() => {
     // todo
@@ -24,24 +31,36 @@ const {componentName}: React.FC = () => {
 
   useDidHide(() => {});
 
+  // 分享给好友
   useShareAppMessage(() => {
-    // 分享给好友
     return {
       title: "页面标题",
       path: "页面路径",
-      imageUrl: "分享图片PNG及JPG，尺寸5:4",
+      imageUrl: "分享图片PNG或JPG，尺寸5:4",
     };
   });
 
+  // 分享到朋友圈
+  onShareTimeline() {
+    const { appConfig } = this.props.system;
+    // 监听右上角菜单“分享到朋友圈”按钮的行为，并自定义分享内容。
+    return {
+      title: "页面标题",
+      imageUrl: "分享图片PNG或JPG，尺寸350x350",
+    };
+  }
+
+  // 下拉时
   usePullDownRefresh(async () => {
-    // 下拉时
+    // if (fetching) return Taro.stopPullDownRefresh();
     // Taro.showNavigationBarLoading();
     // Taro.stopPullDownRefresh();
     // await fetchData();
     // Taro.hideNavigationBarLoading();
   });
+
+  // 触底时
   useReachBottom(() => {
-    // 触底时
     // if (hasMore(data)) {
     // 	fetchData();
     // }
@@ -49,7 +68,7 @@ const {componentName}: React.FC = () => {
 
   return (
     <View className={styles.wrap}>
-      <Text>{componentName} page {first}</Text>
+      <Text>{componentName} page {fetching ? '加载中' : 'hello'}! </Text>
     </View>
   );
 };
