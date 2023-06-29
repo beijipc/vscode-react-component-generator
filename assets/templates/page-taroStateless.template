@@ -12,7 +12,7 @@ const {componentName}: React.FC = () => {
   const route = useRouter();
   const routeParams: RouterParams = route.params
 
-  const fetchData = async () => {
+  const fetchData = async (refresh?: boolean) => {
     if (fetching) return // 防止重复请求
     setFetching(true)
     // TODO: fetching data
@@ -55,7 +55,7 @@ const {componentName}: React.FC = () => {
     // if (fetching) return Taro.stopPullDownRefresh();
     // Taro.showNavigationBarLoading();
     // Taro.stopPullDownRefresh();
-    // await fetchData();
+    // await fetchData(true);
     // Taro.hideNavigationBarLoading();
   });
 
