@@ -9,6 +9,7 @@ type RouterParams = Taro.RouterInfo['params'] & {
 
 const {componentName}: React.FC = () => {
   const [fetching, setFetching] = useState<boolean>(false);
+  const [detail, setDetail] = useState<any>();
   const route = useRouter();
   const routeParams: RouterParams = route.params
 
@@ -42,7 +43,6 @@ const {componentName}: React.FC = () => {
 
   // 分享到朋友圈
   useShareTimeline(() => {
-    // 监听右上角菜单“分享到朋友圈”按钮的行为，并自定义分享内容。
     return {
       title: "页面标题",
       imageUrl: "分享图片PNG或JPG，尺寸350x350"
@@ -64,6 +64,11 @@ const {componentName}: React.FC = () => {
     // 	fetchData();
     // }
   });
+
+  // loading
+  // if(!detail){
+  //  return <PageLoading />
+  // }
 
   return (
     <View className={styles.wrap}>
