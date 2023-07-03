@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from {quotes}react{quotes};
-import Taro, { useDidShow, useDidHide, usePullDownRefresh, useReachBottom, useShareAppMessage, useRouter } from {quotes}@tarojs/taro{quotes};
+import Taro, { useDidShow, useDidHide, usePullDownRefresh, useReachBottom, useShareAppMessage, useShareTimeline, useRouter } from {quotes}@tarojs/taro{quotes};
 import { View, Text } from {quotes}@tarojs/components{quotes};
 import styles from {quotes}./{stylesheetName}{quotes};
 
 type RouterParams = Taro.RouterInfo['params'] & {
-  id?: string;
+  id?: string; // 一些params的类型声明
 }
 
 const {componentName}: React.FC = () => {
@@ -41,14 +41,13 @@ const {componentName}: React.FC = () => {
   });
 
   // 分享到朋友圈
-  onShareTimeline() {
-    const { appConfig } = this.props.system;
+  useShareTimeline(() => {
     // 监听右上角菜单“分享到朋友圈”按钮的行为，并自定义分享内容。
     return {
       title: "页面标题",
-      imageUrl: "分享图片PNG或JPG，尺寸350x350",
+      imageUrl: "分享图片PNG或JPG，尺寸350x350"
     };
-  }
+  });
 
   // 下拉时
   usePullDownRefresh(async () => {
