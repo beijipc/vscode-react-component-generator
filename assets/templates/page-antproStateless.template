@@ -13,9 +13,15 @@ import styles from {quotes}./{stylesheetName}{quotes};
 interface SelfProps {
   currentUser?: API.CurrentUser; // 由connect注入
 }
-// query定义
+
+// 路由match中取值
 interface IParams {
-  token?: string;
+  id: string;
+}
+// 地址query中取值
+interface IQuery {
+  name: string
+  sex?: string
 }
 
 // demo DTO
@@ -25,12 +31,13 @@ interface IDemoDTO {
   isOpen: boolean;
 }
 
-const {componentName}: React.FC<SelfProps & IRouteComponentProps<{ id: string }, IParams>> = (props) => {
+const {componentName}: React.FC<SelfProps & IRouteComponentProps<IParams, IQuery>> = (props) => {
   const [fetching, setFetching] = useState<boolean>(false);
   const [data, setData] = useState<IDemoDTO[]>();
   const actionRef = useRef<ActionType>();
 
-  // console.log(props.location.query.token);
+  // console.log('取路由地址/xxx/xx/:id', props.match.params.id)
+  // console.log('取query参数/xxx/xx?name=wu&sex=1', props.location.query.name)
 
   const fetchData = async () => {
     if (fetching) return;
@@ -67,8 +74,8 @@ const {componentName}: React.FC<SelfProps & IRouteComponentProps<{ id: string },
   ];
 
   return (
-    <PageContainer title={{quotes}hello xxx{quotes}} extra={<Button type={quotes}primary{quotes}>新建</Button>}>
-      <ProTable<IDemoDTO> headerTitle={quotes}hello xxx{quotes} actionRef={actionRef} rowKey={quotes}id{quotes} bordered dataSource={[]} size={quotes}small{quotes} columns={columns} />
+    <PageContainer title={{quotes}{componentName}{quotes}} extra={<Button type={quotes}primary{quotes}>新建</Button>}>
+      <ProTable<IDemoDTO> headerTitle={quotes}{componentName}{quotes} actionRef={actionRef} rowKey={quotes}id{quotes} bordered dataSource={[]} size={quotes}small{quotes} columns={columns} />
     </PageContainer>
   );
 };
