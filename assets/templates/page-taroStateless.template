@@ -3,8 +3,9 @@ import Taro, { useDidShow, useDidHide, usePullDownRefresh, useReachBottom, useSh
 import { View, Text } from {quotes}@tarojs/components{quotes};
 import styles from {quotes}./{stylesheetName}{quotes};
 
+// params的类型声明
 type RouterParams = Taro.RouterInfo['params'] & {
-  id?: string; // 一些params的类型声明
+  id?: string; // 实体ID
 }
 
 const {componentName}: React.FC = () => {
@@ -53,8 +54,8 @@ const {componentName}: React.FC = () => {
   usePullDownRefresh(async () => {
     // if (fetching) return Taro.stopPullDownRefresh();
     // Taro.showNavigationBarLoading();
-    // Taro.stopPullDownRefresh();
     // await fetchData(true);
+    // Taro.stopPullDownRefresh();
     // Taro.hideNavigationBarLoading();
   });
 
