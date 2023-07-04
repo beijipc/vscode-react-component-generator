@@ -1,0 +1,80 @@
+import { Button, Spin } from {quotes}antd{quotes};
+import React, { useEffect, useRef, useState } from {quotes}react{quotes};
+import type { IRouteComponentProps } from {quotes}umi{quotes};
+import { connect } from {quotes}umi{quotes};
+
+import { PageContainer, ProTable } from {quotes}@ant-design/pro-components{quotes};
+import type { ActionType, ProColumns } from {quotes}@ant-design/pro-components{quotes};
+
+import type { ConnectState } from {quotes}@/models/connect{quotes};
+
+import styles from {quotes}./{stylesheetName}{quotes};
+
+interface SelfProps {
+  currentUser?: API.CurrentUser; // 由connect注入
+}
+// query定义
+interface IParams {
+  token?: string;
+}
+
+// demo DTO
+interface IDemoDTO {
+  id: number;
+  name: string;
+  isOpen: boolean;
+}
+
+const {componentName}: React.FC<SelfProps & IRouteComponentProps<{ id: string }, IParams>> = (props) => {
+  const [fetching, setFetching] = useState<boolean>(false);
+  const [data, setData] = useState<IDemoDTO[]>();
+  const actionRef = useRef<ActionType>();
+
+  // console.log(props.location.query.token);
+
+  const fetchData = async () => {
+    if (fetching) return;
+
+    try {
+      setFetching(true);
+      // todo request
+    } catch (error) {
+    } finally {
+      setFetching(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+    return () => {
+      // clear it
+    };
+  }, []);
+
+  // if (!data) {
+  //   return <Spin />;
+  // }
+
+  const columns: ProColumns<IDemoDTO>[] = [
+    {
+      title: {quotes}ID{quotes},
+      dataIndex: {quotes}id{quotes}
+    },
+    {
+      title: {quotes}姓名{quotes},
+      dataIndex: {quotes}name{quotes}
+    }
+  ];
+
+  return (
+    <PageContainer title={{quotes}hello xxx{quotes}} extra={<Button type={quotes}primary{quotes}>新建</Button>}>
+      <ProTable<IDemoDTO> headerTitle={quotes}hello xxx{quotes} actionRef={actionRef} rowKey={quotes}id{quotes} bordered dataSource={[]} size={quotes}small{quotes} columns={columns} />
+    </PageContainer>
+  );
+};
+
+{componentName}.defaultProps = {};
+
+export default connect(({ user }: ConnectState) => ({
+  currentUser: user.currentUser
+}))({componentName});

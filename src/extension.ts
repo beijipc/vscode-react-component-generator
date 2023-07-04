@@ -10,10 +10,16 @@ import { FileHelper, logger } from './helpers';
 
 // const TEMPLATE_SUFFIX_SEPERATOR = '-';
 
+interface ICMD {
+  commandId: string;
+  prefix: string;
+  suffix: string;
+}
+
 //激活扩展时调用此方法
 //您的扩展在第一次执行命令时即被激活
 export function activate(context: ExtensionContext) {
-  const createComponent = (uri, cmd) => {
+  const createComponent = (uri: string, cmd: ICMD) => {
     // Display a dialog to the user
     let enterComponentNameDialog$ = Observable.from(window.showInputBox({ prompt: '请为组件输入名称' }));
 
@@ -142,6 +148,11 @@ export function activate(context: ExtensionContext) {
       prefix: 'component',
       suffix: 'nextjsStateless',
       commandId: 'extension.genNextjsStatelessComponentFiles',
+    },
+    {
+      prefix: 'page',
+      suffix: 'antproStateless',
+      commandId: 'extension.genAntproStatelessPageFiles',
     },
   ];
 

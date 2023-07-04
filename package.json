@@ -2,7 +2,7 @@
   "name": "ddyx-generator-react-component",
   "displayName": "DDYX Generator React Component",
   "description": "快速创建react组件，支持nextjs、tarojs框架",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "publisher": "beijipc",
   "author": {
     "name": "jianglinghua",
@@ -50,7 +50,8 @@
     "onCommand:extension.genTaroStatelessPageFiles",
     "onCommand:extension.genTaroClassPageFiles",
     "onCommand:extension.genNextjsStatelessComponentFiles",
-    "onCommand:extension.genNextjsStatelessPageFiles"
+    "onCommand:extension.genNextjsStatelessPageFiles",
+    "onCommand:extension.genAntproStatelessPageFiles"
   ],
   "main": "./out/src/extension",
   "icon": "assets/images/icon.png",
@@ -163,6 +164,10 @@
       {
         "command": "extension.genNextjsStatelessComponentFiles",
         "title": "New Nextjs Component"
+      },
+      {
+        "command": "extension.genAntproStatelessPageFiles",
+        "title": "New Antpro Page"
       }
     ],
     "menus": {
@@ -201,6 +206,10 @@
         },
         {
           "command": "extension.genNextjsStatelessComponentFiles",
+          "group": "ddyx"
+        },
+        {
+          "command": "extension.genAntproStatelessPageFiles",
           "group": "ddyx"
         }
       ]
